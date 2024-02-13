@@ -4,8 +4,8 @@ import Link from 'next/link';
 const HomePage = () => {
   return (
     <div>
-      <h1 className='text-7xl'>Home Page</h1>
-      <Link href='/about'>about page</Link>
+      <h1 className='text-5xl mb-8 font-bold'>Next.JS</h1>
+      <Link href='/client' className='btn btn-accent'>Get start</Link>
     </div>
   );
 };
