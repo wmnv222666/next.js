@@ -1,7 +1,8 @@
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'//for font
 import './globals.css'
+import Navbar from '@/components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })// store instances of the Inter font.
 
 export const metadata = {
   title: 'Next.js App',
@@ -12,8 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='text-2xl text-primary-content'>This is navbar</nav>
-        {children}</body>
+      <Navbar/>
+          <main className='px-8 py-20 max-w-6xl mx-auto'> {children} </main>
+        
+        
+       
+      </body>
 
     </html>
   )
