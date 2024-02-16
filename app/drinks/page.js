@@ -1,5 +1,7 @@
 // import React, { useEffect } from "react";
 
+import DrinksList from "@/components/DrinksList";
+
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
 
 const fetchDrinks = async () => {
@@ -15,11 +17,12 @@ const fetchDrinks = async () => {
 
 const DrinksPage = async () => {
     const data = await fetchDrinks()//这里经常使用useEffect  hook然后在里面打印data
-    // console.log(data, "data");
+    console.log(data, "data");
 
     return (
         <div>
-            <h1 className='text-7xl'>Drinks Page</h1>
+            {/* 引入component的组件 */}
+            <DrinksList drinks={data.drinks}></DrinksList>
         </div>
     );
 };
