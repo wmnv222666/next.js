@@ -41,6 +41,8 @@ Vite + Prisma
 npm install prisma --save-dev
 npm install @prisma/client
 npm prisma init
+after  execute commant1:npx prisma migrate dev      2:task model  3.npx prisma studio
+will be generate a database
 
 
 
