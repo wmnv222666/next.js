@@ -1,15 +1,19 @@
 
 import React from 'react'
-import prisma from '../utils/db'
+// import prisma from '../utils/db'
 import Link from 'next/link';
 import DeleteForm from './DeleteForm';
+import { getAllTasks } from '@/utils/actions';
 
 const TaskList = async () => {
-    const tasks = await prisma.task.findMany({
-        orderBy: {
-            createdAt:'desc'
-        }
-    })
+    const tasks = await getAllTasks()
+
+    //注销后在utils中写封装一下
+    // const tasks = await prisma.task.findMany({
+    //     orderBy: {
+    //         createdAt:'desc'
+    //     }
+    // })
     // console.log(tasks);
     if (tasks.length === 0) {
         return <h2 className='mt-8 font-medium texe-lg'>No Tasks to shows</h2>

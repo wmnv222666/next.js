@@ -1,21 +1,25 @@
 // import { data } from 'autoprefixer'
 // import React from 'react'
-import prisma from '../utils/db'
-import { revalidatePath } from 'next/cache'
+// import prisma from '../utils/db'
+// import { revalidatePath } from 'next/cache'
+import { createTask } from "@/utils/actions";
 
 // The FormData object, which contains the data submitted in the form
-const createTask = async (formData) => {
-  'use server'
-  const content = formData.get('content')
-  // console.log(content)
-  await prisma.task.create({
-    data: {
-      content
-    }
-  })
-  revalidatePath('/tasks')
 
-}
+//把这些都封装到utlis的action中
+// const createTask = async (formData) => {
+//   'use server'
+//   const content = formData.get('content')
+//   // console.log(content)
+//   await prisma.task.create({
+//     data: {
+//       content
+//     }
+//   })
+//   revalidatePath('/tasks')
+
+// }
+
 
 const TaskForm = () => {
   return (
