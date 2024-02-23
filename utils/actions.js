@@ -58,3 +58,15 @@ export const getTask = async (id) => {
 //         where: { id }
 //     })
 // }
+export const createTaskCustom = async (formData) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const content = formData.get('content')
+    // console.log(content)
+    await prisma.task.create({
+        data: {
+            content
+        }
+    })
+    revalidatePath('/tasks')
+
+}
